@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="bg-gray-100">
       <footer className="m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4  gap-y-12 py-12 max-w-[1000px]">
-        <div className="space-y-4 text-center footer__div">
+        <div className="space-y-2 text-center footer__div">
           <Typography component="h6" variant="h6">
             ABOUT
           </Typography>

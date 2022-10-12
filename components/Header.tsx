@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, TextField } from "@mui/material";
 
-function Header() {
+const Header = () => {
   return (
     <header className="flex justify-between items-center shadow-md z-50 sticky">
       {/* left */}
@@ -79,6 +79,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

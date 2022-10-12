@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Button, Typography } from "@mui/material";
 
-function HeroCard() {
+const HeroCard = () => {
   return (
     <div className="relative w-full h-80 sm:h-96 md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]">
       <Image
@@ -15,7 +15,6 @@ function HeroCard() {
         <Typography
           className="font-semibold px-2 py-1 bg-slate-100 rounded-full"
           component="p"
-          variant="p"
           color="primary"
         >
           Not sure where to go ?
@@ -30,6 +29,6 @@ function HeroCard() {
       </div>
     </div>
   );
-}
+};
 
 export default HeroCard;

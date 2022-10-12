@@ -33,7 +33,7 @@ const LargCard: React.FC<Props> = ({ img, title, subtitle, buttonText }) => {
           <Button
             variant="contained"
             color="secondary"
-            className="mt-4 text-sm normal-case"
+            className="mt-4 text-sm normal-case py-2"
           >
             {buttonText}
           </Button>

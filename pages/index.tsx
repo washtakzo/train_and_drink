@@ -7,6 +7,7 @@ import SmallCard from "../components/SmallCard";
 import React from "react";
 import MediumCard from "../components/MediumCard";
 import LargCard from "../components/LargCard";
+import Footer from "../components/Footer";
 
 const database_adress =
   "https://airbnb-clone-d2585-default-rtdb.europe-west1.firebasedatabase.app/";
@@ -63,13 +64,16 @@ const Home: NextPage<Props> = ({ popularDestination, cardData }) => {
             ))}
           </div>
         </section>
-        <LargCard
-          img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
-          title="The Greatest Outdoors"
-          subtitle="Wishlists curated by Airbnb."
-          buttonText="Get Inspired"
-        />
+        <div className="py-12">
+          <LargCard
+            img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
+            title="The Greatest Outdoors"
+            subtitle="Wishlists curated by Airbnb."
+            buttonText="Get Inspired"
+          />
+        </div>
       </main>
+      <Footer />
     </>
   );
 };

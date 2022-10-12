@@ -59,8 +59,8 @@ const Home: NextPage<Props> = ({ popularDestination, cardData }) => {
             Train Anywhere
           </Typography>
           <div className="flex space-x-4 pt-12 pb-6 overflow-x-scroll overflow-y-hidden scrollbar-hide pl-2 -ml-2">
-            {cardData.map((item) => (
-              <MediumCard img={item.img} title={item.title} />
+            {cardData.map((item, index) => (
+              <MediumCard key={index} img={item.img} title={item.title} />
             ))}
           </div>
         </section>

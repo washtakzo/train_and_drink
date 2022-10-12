@@ -30,3 +30,20 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.footer__div p {
+  font-size: small;
+}
+
+.footer__div p:hover {
+  cursor: pointer;
+}
+
+.footer__div h6 {
+  font-size: small;
+  font-weight: bold;
+}
+
+.footer__div h6:hover {
+  cursor: pointer;
+}

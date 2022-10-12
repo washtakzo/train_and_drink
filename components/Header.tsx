@@ -3,7 +3,7 @@ import { Typography, TextField } from "@mui/material";
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center shadow-md z-50 sticky">
+    <header className="flex justify-between items-center shadow-md z-50 sticky top-0 bg-white">
       {/* left */}
       <Typography
         variant="h5"

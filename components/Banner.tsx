@@ -13,7 +13,7 @@ const HeroCard = () => {
       />
       <div className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col justify-between items-center">
         <Typography
-          className="font-semibold px-2 py-1 bg-slate-100 rounded-full"
+          className="font-semibold px-2 py-1 bg-[#ffffffdd] rounded-md text-xl flex-grow"
           component="p"
           color="primary"
         >
@@ -21,8 +21,8 @@ const HeroCard = () => {
         </Typography>
         <Button
           variant="contained"
-          color="primary"
-          className="mt-2 font-semibold normal-case"
+          color="secondary"
+          className="mt-2 normal-case"
         >
           I am flexible
         </Button>

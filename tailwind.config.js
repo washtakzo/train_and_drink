@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
   // https://mui.com/material-ui/guides/interoperability/#tailwind-css---
   corePlugins: {
     preflight: false,

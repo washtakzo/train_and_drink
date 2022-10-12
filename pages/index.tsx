@@ -4,8 +4,22 @@ import Header from "../components/Header";
 import Banner from "../components/Banner";
 import { Typography } from "@mui/material";
 import SmallCard from "../components/SmallCard";
+import React from "react";
+import MediumCard from "../components/MediumCard";
 
-const Home: NextPage = () => {
+type Props = {
+  popularDestination: {
+    img: string;
+    location: string;
+    distance: string;
+  }[];
+};
+const database_adress =
+  "https://airbnb-clone-d2585-default-rtdb.europe-west1.firebasedatabase.app/";
+
+const popularEndPoint = "popular.json";
+
+const Home: NextPage<Props> = ({ popularDestination }) => {
   return (
     <>
       <Head>
@@ -16,35 +30,64 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <Banner />
-      <section className="max-w-[800px] m-auto p-6">
-        <Typography component="h2" variant="h4" fontWeight="500" className="">
-          Explore Nearby
-        </Typography>
-        <SmallCard
-          image="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
-          city="London"
-          duration="45-minutes drive"
-        />
-        <SmallCard
-          image="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
-          city="London"
-          duration="45-minutes drive"
-        />
-        <SmallCard
-          image="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
-          city="London"
-          duration="45-minutes drive"
-        />
-        <SmallCard
-          image="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
-          city="London"
-          duration="45-minutes drive"
-        />
-      </section>
+      <main className="max-w-[1100px] m-auto">
+        <section className="p-6">
+          <Typography component="h2" variant="h4" fontWeight="500" className="">
+            Explore Nearby
+          </Typography>
+          <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {popularDestination.map((item: any, index: any) => (
+              <SmallCard
+                key={index}
+                img={item.img}
+                location={item.location}
+                distance={item.distance}
+              />
+            ))}
+          </div>
+        </section>
+        <section className=" p-6">
+          <Typography component="h2" variant="h4" fontWeight="500" className="">
+            Train Anywhere
+          </Typography>
+          <div className="flex space-x-4 pt-12 overflow-x-scroll overflow-y-hidden scrollbar-hide pl-2">
+            <MediumCard
+              img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
+              title="Outdoor getaways"
+            />
+            <MediumCard
+              img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
+              title="Outdoor getaways"
+            />
+            <MediumCard
+              img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
+              title="Outdoor getaways"
+            />
+            <MediumCard
+              img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
+              title="Outdoor getaways"
+            />
+            <MediumCard
+              img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
+              title="Outdoor getaways"
+            />
+          </div>
+        </section>
+      </main>
     </>
   );
 };
 
 export default Home;
 
-export async function getStaticProps() {}
+export async function getStaticProps() {
+  const popularDestination = await fetch(database_adress + popularEndPoint)
+    .then((res) => res.json())
+    .then((data) => data);
+
+  return {
+    props: {
+      popularDestination,
+    },
+  };
+}

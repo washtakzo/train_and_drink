@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Button, Typography } from "@mui/material";
 
-const HeroCard = () => {
+const Banner = () => {
   return (
     <div className="relative w-full h-80 sm:h-96 md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]">
       <Image
@@ -31,4 +31,4 @@ const HeroCard = () => {
   );
 };
 
-export default HeroCard;
+export default Banner;

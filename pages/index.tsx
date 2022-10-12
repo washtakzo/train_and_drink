@@ -6,6 +6,13 @@ import { Typography } from "@mui/material";
 import SmallCard from "../components/SmallCard";
 import React from "react";
 import MediumCard from "../components/MediumCard";
+import LargCard from "../components/LargCard";
+
+const database_adress =
+  "https://airbnb-clone-d2585-default-rtdb.europe-west1.firebasedatabase.app/";
+
+const popularEndPoint = "popular.json";
+const cardDataEndPoint = "card_data.json";
 
 type Props = {
   popularDestination: {
@@ -13,13 +20,13 @@ type Props = {
     location: string;
     distance: string;
   }[];
+  cardData: {
+    img: string;
+    title: string;
+  }[];
 };
-const database_adress =
-  "https://airbnb-clone-d2585-default-rtdb.europe-west1.firebasedatabase.app/";
 
-const popularEndPoint = "popular.json";
-
-const Home: NextPage<Props> = ({ popularDestination }) => {
+const Home: NextPage<Props> = ({ popularDestination, cardData }) => {
   return (
     <>
       <Head>
@@ -30,8 +37,8 @@ const Home: NextPage<Props> = ({ popularDestination }) => {
       </Head>
       <Header />
       <Banner />
-      <main className="max-w-[1100px] m-auto">
-        <section className="p-6">
+      <main className="max-w-[1100px] m-auto px-4">
+        <section className="py-6">
           <Typography component="h2" variant="h4" fontWeight="500" className="">
             Explore Nearby
           </Typography>
@@ -46,33 +53,22 @@ const Home: NextPage<Props> = ({ popularDestination }) => {
             ))}
           </div>
         </section>
-        <section className=" p-6">
+        <section className=" py-6">
           <Typography component="h2" variant="h4" fontWeight="500" className="">
             Train Anywhere
           </Typography>
-          <div className="flex space-x-4 pt-12 overflow-x-scroll overflow-y-hidden scrollbar-hide pl-2">
-            <MediumCard
-              img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
-              title="Outdoor getaways"
-            />
-            <MediumCard
-              img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
-              title="Outdoor getaways"
-            />
-            <MediumCard
-              img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
-              title="Outdoor getaways"
-            />
-            <MediumCard
-              img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
-              title="Outdoor getaways"
-            />
-            <MediumCard
-              img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
-              title="Outdoor getaways"
-            />
+          <div className="flex space-x-4 pt-12 overflow-x-scroll overflow-y-hidden scrollbar-hide pl-2 -ml-2">
+            {cardData.map((item) => (
+              <MediumCard img={item.img} title={item.title} />
+            ))}
           </div>
         </section>
+        <LargCard
+          img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
+          title="The Greatest Outdoors"
+          subtitle="Wishlists curated by Airbnb."
+          buttonText="Get Inspired"
+        />
       </main>
     </>
   );
@@ -85,9 +81,14 @@ export async function getStaticProps() {
     .then((res) => res.json())
     .then((data) => data);
 
+  const cardData = await fetch(database_adress + cardDataEndPoint)
+    .then((res) => res.json())
+    .then((data) => data);
+
   return {
     props: {
       popularDestination,
+      cardData,
     },
   };
 }

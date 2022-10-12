@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 type Props = {
-  img: string;
-  location: string;
-  distance: string;
+  img: string,
+  location: string,
+  distance: string,
 };
 const SmallCard: React.FC<Props> = ({ img, location, distance }) => {
   return (

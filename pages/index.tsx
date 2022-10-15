@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Banner from "../components/Banner";
 import { Typography } from "@mui/material";
 import SmallCard from "../components/SmallCard";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MediumCard from "../components/MediumCard";
 import LargCard from "../components/LargCard";
 import Footer from "../components/Footer";

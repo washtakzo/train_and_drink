@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Typography, TextField } from "@mui/material";
 
 const Header = () => {
+  //scrolling Management
+  const [scroll, setScroll] = useState(0);
+  const listenScroll = React.useCallback(() => {
+    const scrolling =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    setScroll(scrolling);
+  }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", listenScroll);
+  }, []);
+  //---
+  const isScrollTop = scroll === 0 ? true : false;
+  const transition = " transition duration-300 ease-out ";
   return (
-    <header className="flex justify-between items-center shadow-md z-50 sticky top-0 bg-white">
+    <header
+      className={`flex justify-between items-center ${
+        isScrollTop ? "shadow-none bg-transparent" : "shadow-md bg-white"
+      } z-50 fixed top-0 w-[100%] ${transition}`}
+    >
       {/* left */}
       <Typography
         variant="h5"
         component="h1"
-        className="py-6 px-4 font-bold cursor-pointer "
+        className="py-6 px-4 font-bold cursor-pointer"
         fontWeight={"bold"}
-        color="primary"
+        color={`${isScrollTop ? "white" : "primary"}`}
       >
         train&drink
       </Typography>
@@ -18,13 +35,28 @@ const Header = () => {
       {/* midle */}
       <TextField
         variant="standard"
+        color="primary"
         placeholder="Start yout search"
-        className="w-[30%] max-w-lg"
+        className={`w-[30%] max-w-lg border-2 rounded-lg ${
+          scroll > 0 ? "border-none" : "text-white border-solid "
+        }${transition}`}
+        inputProps={{
+          className: `${
+            isScrollTop
+              ? "placeholder-[#ffffff] text-white pl-2 " + transition
+              : transition
+          }`,
+        }}
       />
 
       {/* right */}
       <div className="flex  items-center justify-between space-x-4 pr-4 ">
-        <Typography className="hidden md:inline-flex text-slate-500 cursor-pointer">
+        <Typography
+          className={`hidden md:inline-flex cursor-pointer 
+                                ${
+                                  isScrollTop ? "text-white" : "text-slate-500"
+                                }${transition}`}
+        >
           Become a host
         </Typography>
         {/* icon planette */}
@@ -34,7 +66,9 @@ const Header = () => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-6 h-6 text-slate-500 cursor-pointer"
+          className={`w-6 h-6  cursor-pointer ${
+            isScrollTop ? "text-white" : "text-slate-500"
+          }${transition}`}
         >
           <path
             strokeLinecap="round"
@@ -43,7 +77,12 @@ const Header = () => {
           />
         </svg>
 
-        <div className="flex items-center justify-between border-2 p-2 rounded-full">
+        <div
+          className={`flex items-center justify-between border-solid border-2 p-1 rounded-full 
+                       ${
+                         isScrollTop ? "border-white" : "border-slate-500"
+                       }${transition}`}
+        >
           {/* icon burger */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +90,9 @@ const Header = () => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-6 h-6 text-slate-500 cursor-pointer"
+            className={`w-6 h-6  cursor-pointer ${
+              isScrollTop ? "text-white" : "text-slate-500"
+            }${transition}`}
           >
             <path
               strokeLinecap="round"
@@ -67,7 +108,9 @@ const Header = () => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-6 h-6 text-slate-500 cursor-pointer"
+            className={`w-6 h-6  cursor-pointer ${
+              isScrollTop ? "text-white" : "text-slate-500"
+            }${transition}`}
           >
             <path
               strokeLinecap="round"

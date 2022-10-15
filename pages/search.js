@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Header from "../components/Header";
 import { format } from "date-fns";
 
-const search = () => {
+const Search = () => {
   const router = useRouter();
   const [formatedStartDate, setFormatedStartDate] = useState("");
   const [formatedEndDate, setFormatedEndDate] = useState("");
@@ -41,4 +41,4 @@ const search = () => {
   );
 };
 
-export default search;
+export default Search;

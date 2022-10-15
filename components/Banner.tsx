@@ -4,7 +4,7 @@ import { Button, Typography } from "@mui/material";
 
 const Banner = () => {
   return (
-    <div className="relative w-full h-80 sm:h-96 md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]">
+    <div className="relative w-full h-96 sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px]">
       <Image
         src="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
         layout="fill"

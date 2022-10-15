@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Typography, TextField } from "@mui/material";
 
 type Props = {
   scroll: number;
 };
 
-const Header: React.FC<Props> = ({ scroll }) => {
+const Header: React.FC<Props> = () => {
+  //scrolling Management
+  const [scroll, setScroll] = useState(0);
+  const listenScroll = React.useCallback(() => {
+    const scrolling =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    setScroll(scrolling);
+  }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", listenScroll);
+  }, []);
+  //---
   const isScrollTop = scroll === 0 ? true : false;
   const transition = " transition duration-300 ease-out ";
   return (

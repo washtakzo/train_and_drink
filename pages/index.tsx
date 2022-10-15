@@ -28,17 +28,6 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ popularDestination, cardData }) => {
-  //scrolling Management
-  const [scroll, setScroll] = useState(0);
-  const listenScroll = () => {
-    const scrolling =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    setScroll(scrolling);
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", listenScroll);
-  }, []);
-  //---
   return (
     <>
       <Head>
@@ -47,7 +36,7 @@ const Home: NextPage<Props> = ({ popularDestination, cardData }) => {
         <link rel="icon" href="/favicon.ico" />
         {/* <link href="/styles/tailwind.css" rel="stylesheet" /> */}
       </Head>
-      <Header scroll={scroll} />
+      <Header />
       <Banner />
       <main className="max-w-[1100px] m-auto px-4">
         <section className="py-6">

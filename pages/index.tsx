@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Banner from "../components/Banner";
 import { Typography } from "@mui/material";
 import SmallCard from "../components/SmallCard";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MediumCard from "../components/MediumCard";
 import LargCard from "../components/LargCard";
 import Footer from "../components/Footer";
@@ -58,9 +58,9 @@ const Home: NextPage<Props> = ({ popularDestination, cardData }) => {
           <Typography component="h2" variant="h4" fontWeight="500" className="">
             Train Anywhere
           </Typography>
-          <div className="flex space-x-4 pt-12 overflow-x-scroll overflow-y-hidden scrollbar-hide pl-2 -ml-2">
-            {cardData.map((item) => (
-              <MediumCard img={item.img} title={item.title} />
+          <div className="flex space-x-4 pt-12 pb-6 overflow-x-scroll overflow-y-hidden scrollbar-hide pl-2 -ml-2">
+            {cardData.map((item, index) => (
+              <MediumCard key={index} img={item.img} title={item.title} />
             ))}
           </div>
         </section>

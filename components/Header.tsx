@@ -5,8 +5,8 @@ import theme from "../utils/theme";
 import { useRouter } from "next/router";
 
 type Props = {
-  placeholder: string;
-  canBeTransparent: boolean;
+  placeholder?: string;
+  canBeTransparent?: boolean;
 };
 const borderTheme = `border-[${theme.palette.primary.main}]`;
 

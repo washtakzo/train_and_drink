@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Typography, TextField } from "@mui/material";
 
-type Props = {
-  scroll: number;
-};
-
-const Header: React.FC<Props> = () => {
+const Header = () => {
   //scrolling Management
   const [scroll, setScroll] = useState(0);
   const listenScroll = React.useCallback(() => {

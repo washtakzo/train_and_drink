@@ -68,7 +68,7 @@ const Home: NextPage<Props> = ({ popularDestination, cardData }) => {
           <LargCard
             img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
             title="The Greatest Outdoors"
-            subtitle="Wishlists curated by Airbnb."
+            subtitle="Wishlists curated by us."
             buttonText="Get Inspired"
           />
         </div>

@@ -13,6 +13,7 @@ const MediumCard: React.FC<Props> = ({ img, title }) => {
       <div className="relative w-72 h-72">
         <Image
           src={img}
+          alt="illustration image"
           layout="fill"
           objectFit="cover"
           className="rounded-xl"

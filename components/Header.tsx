@@ -42,7 +42,7 @@ const Header: React.FC<Props> = ({ placeholder, canBeTransparent = true }) => {
   }, []);
   useEffect(() => {
     window.addEventListener("scroll", listenScroll);
-  }, []);
+  }, [listenScroll]);
   //---
 
   const isHeaderTransparent =

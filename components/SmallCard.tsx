@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 type Props = {
-  img: string,
-  location: string,
-  distance: string,
+  img: string;
+  location: string;
+  distance: string;
 };
 const SmallCard: React.FC<Props> = ({ img, location, distance }) => {
   return (
@@ -12,6 +12,7 @@ const SmallCard: React.FC<Props> = ({ img, location, distance }) => {
       <div className="relative w-16 h-16">
         <Image
           src={img}
+          alt="illustration"
           layout="fill"
           objectFit="cover"
           className=" rounded-md"

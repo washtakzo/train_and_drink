@@ -12,7 +12,13 @@ type Props = {
 const LargCard: React.FC<Props> = ({ img, title, subtitle, buttonText }) => {
   return (
     <div className="relative w-auto h-96 m-auto cursor-pointer hover:scale-105 transition duration-200 ease-out">
-      <Image src={img} layout="fill" objectFit="cover" className="rounded-xl" />
+      <Image
+        src={img}
+        alt="largCardImage"
+        layout="fill"
+        objectFit="cover"
+        className="rounded-xl"
+      />
       <div className="absolute top-20 left-12">
         <Typography
           className="text-white w-[250px]"

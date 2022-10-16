@@ -7,6 +7,7 @@ const Banner = () => {
     <div className="relative w-full h-96 sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px]">
       <Image
         src="https://web.archive.org/web/20210725183154im_/https://a0.muscache.com/im/pictures/e4a2a61c-589f-4e49-b3b8-968a6bc23389.jpg?im_w=2560"
+        alt="banner"
         layout="fill"
         objectFit="cover"
         className=""

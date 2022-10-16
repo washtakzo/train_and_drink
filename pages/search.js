@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
 import Footer from "../components/Footer";
+import Map from "../components/Map";
 
 const DATA_BASE_URL =
   "https://airbnb-clone-d2585-default-rtdb.europe-west1.firebasedatabase.app/search_results.json";
@@ -39,9 +40,11 @@ const Search = ({ cardsInfo }) => {
       <main className="flex min-h-screen">
         <section className="px-6 flex-grow">
           <p className="text-xs mt-14 font-semibold">
-            300+ Home Gym - {formatedStartDate} - {formatedEndDate} - for you
+            300+ results - {formatedStartDate} - {formatedEndDate} - for you
           </p>
-          <h1 className="font-semibold text-3xl py-2">Stays in {location}</h1>
+          <h1 className="font-semibold text-3xl py-2">
+            Home Gyms in {location}
+          </h1>
           <div className="mt-6">
             {cardsInfo &&
               cardsInfo.map((item) => (
@@ -58,7 +61,9 @@ const Search = ({ cardsInfo }) => {
               ))}
           </div>
         </section>
-        <section className="hidden lg:inline-flex min-w-[300px] w-[30%] bg-red-300"></section>
+        <section className="hidden lg:inline-flex min-w-[300px] w-[30%] ">
+          <Map searchResults={cardsInfo} />
+        </section>
       </main>
       <Footer />
     </>

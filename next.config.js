@@ -9,6 +9,10 @@ const nextConfig = {
       "web.archive.org",
     ],
   },
+  env: {
+    mapbox_key:
+      "pk.eyJ1Ijoid2FzaHRha3pvIiwiYSI6ImNsOHg0Z2VqeTAwcnkzb3BjcmpxZ2MyYXcifQ.93-v3XMT8XnW9xIlCskhEg",
+  },
 };
 
 module.exports = nextConfig;

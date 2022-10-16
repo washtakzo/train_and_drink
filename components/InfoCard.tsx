@@ -26,6 +26,7 @@ const InfoCard: React.FC<Props> = ({
       <div className="relative sm:h-32 lg:h-40 xl:h-52 aspect-video">
         <Image
           src={img}
+          alt="illustration"
           layout="fill"
           objectFit="cover"
           className="rounded-xl"

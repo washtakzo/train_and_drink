@@ -2,12 +2,30 @@ import React from "react";
 import Image from "next/image";
 import theme from "../utils/theme";
 
-const InfoCard = () => {
+type Props = {
+  img: string;
+  description: string;
+  location: string;
+  price: string;
+  star: number;
+  title: string;
+  total: string;
+};
+
+const InfoCard: React.FC<Props> = ({
+  img,
+  description,
+  location,
+  price,
+  star,
+  title,
+  total,
+}) => {
   return (
     <div className="flex flex-col sm:flex-row border-solid first:border-t border-x-0 border-t-0 border-gray-200 border-b px-4 py-6 cursor-pointer hover:opacity-90 hover:shadow-lg transition duration-200 ease-out">
       <div className="relative sm:h-32 lg:h-40 xl:h-52 aspect-video">
         <Image
-          src="https://web.archive.org/web/20210725183154im_/https://a0.muscache.com/im/pictures/e4a2a61c-589f-4e49-b3b8-968a6bc23389.jpg?im_w=2560"
+          src={img}
           layout="fill"
           objectFit="cover"
           className="rounded-xl"
@@ -15,9 +33,7 @@ const InfoCard = () => {
       </div>
       <div className="py-2 sm:pl-6 w-[100%]">
         <div className="flex justify-between">
-          <p className="text-xs lg:text-base text-gray-500">
-            Private room in center of London
-          </p>
+          <p className="text-xs lg:text-base text-gray-500">{location}</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -33,16 +49,11 @@ const InfoCard = () => {
             />
           </svg>
         </div>
-        <h2 className="text-lg lg:text-2xl font-semibold">
-          Stay at this spacious Edwardian House
-        </h2>
+        <h2 className="text-lg lg:text-2xl font-semibold">{title}</h2>
         <div className="w-10 pt-2 border-solid border-x-0 border-t-0 border-b-[1px] border-gray-200" />
-        <p className="text-sm lg:text-base text-gray-500 py-2">
-          1 guest · 1 bedroom · 1 bed · 1.5 shared bthrooms · Wifi · Kitchen ·
-          Free parking · Washing Machine
-        </p>
+        <p className="text-sm lg:text-base text-gray-500 py-2">{description}</p>
         <h3 className="text-end font-semibold text-md lg:text-xl 2xl:text-2xl">
-          £30 / night
+          {price}
         </h3>
         <div className="flex justify-between pt-1">
           <p className="lg:text-lg 2xl:text-xl flex items-center">
@@ -58,9 +69,9 @@ const InfoCard = () => {
                 clipRule="evenodd"
               />
             </svg>
-            4.73
+            {star}
           </p>
-          <p className="text-sm lg:text-base 2xl:text-lg">£117 total</p>
+          <p className="text-sm lg:text-base 2xl:text-lg">{total}</p>
         </div>
       </div>
     </div>

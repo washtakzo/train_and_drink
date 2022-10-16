@@ -5,7 +5,10 @@ import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
 import Footer from "../components/Footer";
 
-const Search = () => {
+const DATA_BASE_URL =
+  "https://airbnb-clone-d2585-default-rtdb.europe-west1.firebasedatabase.app/search_results.json";
+
+const Search = ({ cardsInfo }) => {
   const router = useRouter();
   const [formatedStartDate, setFormatedStartDate] = useState("");
   const [formatedEndDate, setFormatedEndDate] = useState("");
@@ -40,9 +43,18 @@ const Search = () => {
           </p>
           <h1 className="font-semibold text-3xl py-2">Stays in {location}</h1>
           <div className="mt-6">
-            <InfoCard />
-            <InfoCard />
-            <InfoCard />
+            {cardsInfo &&
+              cardsInfo.map((item) => (
+                <InfoCard
+                  img={item.img}
+                  description={item.description}
+                  location={item.location}
+                  price={item.price}
+                  star={item.star}
+                  title={item.title}
+                  total={item.total}
+                />
+              ))}
           </div>
         </section>
         <section className="hidden lg:inline-flex min-w-[300px] w-[30%] bg-red-300"></section>
@@ -53,3 +65,14 @@ const Search = () => {
 };
 
 export default Search;
+
+export async function getServerSideProps() {
+  const cardsInfo = await fetch(DATA_BASE_URL)
+    .then((res) => res.json())
+    .then((data) => data);
+  return {
+    props: {
+      cardsInfo,
+    },
+  };
+}

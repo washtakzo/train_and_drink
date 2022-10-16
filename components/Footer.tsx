@@ -9,41 +9,41 @@ const Footer = () => {
           <Typography component="h6" variant="h6">
             ABOUT
           </Typography>
-          <p>How Airbnb works</p>
+          <p>How TrainDrink works</p>
           <p>Newsroom</p>
           <p>Investors</p>
-          <p>Airbnb Plus</p>
-          <p>Airbnb Luxe</p>
+          <p>TrainDrink Plus</p>
+          <p>TrainDrink Luxe</p>
         </div>
         <div className="space-y-2 text-center footer__div">
           <Typography component="h6" variant="h6">
             COMMUNITY
           </Typography>
-          <p>How Airbnb works</p>
+          <p>How TrainDrink works</p>
           <p>Newsroom</p>
           <p>Investors</p>
-          <p>Airbnb Plus</p>
-          <p>Airbnb Luxe</p>
+          <p>TrainDrink Plus</p>
+          <p>TrainDrink Luxe</p>
         </div>
         <div className="space-y-2 text-center footer__div">
           <Typography component="h6" variant="h6">
             HOST
           </Typography>
-          <p>How Airbnb works</p>
+          <p>How TrainDrink works</p>
           <p>Newsroom</p>
           <p>Investors</p>
-          <p>Airbnb Plus</p>
-          <p>Airbnb Luxe</p>
+          <p>TrainDrink Plus</p>
+          <p>TrainDrink Luxe</p>
         </div>
         <div className="space-y-2 text-center footer__div">
           <Typography component="h6" variant="h6">
             SUPPORT
           </Typography>
-          <p>How Airbnb works</p>
+          <p>How TrainDrink works</p>
           <p>Newsroom</p>
-          <p>Investors</p>
-          <p>Airbnb Plus</p>
-          <p>Airbnb Luxe</p>
+          <p>Developped by Zoher</p>
+          <p>TrainDrink Plus</p>
+          <p>TrainDrink Luxe</p>
         </div>
       </footer>
     </div>

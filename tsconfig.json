@@ -19,7 +19,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/SmallCard.js"
+    "components/SmallCard.js",
+    "components/Map.js"
   ],
   "exclude": ["node_modules"]
 }

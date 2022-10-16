@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Header from "../components/Header";
 import { format } from "date-fns";
+import InfoCard from "../components/InfoCard";
 
 const Search = () => {
   const router = useRouter();
@@ -31,11 +32,16 @@ const Search = () => {
   return (
     <div>
       <Header placeholder={placehodler} canBeTransparent={false} />
-      <section className="px-4">
+      <section className="px-6">
         <p className="text-xs mt-14 font-semibold">
           300+ Home Gym - {formatedStartDate} - {formatedEndDate} - for you
         </p>
         <h1 className="font-semibold text-3xl py-2">Stays in {location}</h1>
+        <div className="mt-6">
+          <InfoCard />
+          <InfoCard />
+          <InfoCard />
+        </div>
       </section>
     </div>
   );

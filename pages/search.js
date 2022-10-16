@@ -33,8 +33,8 @@ const Search = () => {
   return (
     <>
       <Header placeholder={placehodler} canBeTransparent={false} />
-      <main className="flex ">
-        <section className="px-6 md:w-[70%]">
+      <main className="flex min-h-screen">
+        <section className="px-6 flex-grow">
           <p className="text-xs mt-14 font-semibold">
             300+ Home Gym - {formatedStartDate} - {formatedEndDate} - for you
           </p>
@@ -45,7 +45,7 @@ const Search = () => {
             <InfoCard />
           </div>
         </section>
-        <section className="hidden md:inline-flex w-[30%] bg-red-300"></section>
+        <section className="hidden lg:inline-flex min-w-[300px] w-[30%] bg-red-300"></section>
       </main>
       <Footer />
     </>

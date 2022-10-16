@@ -41,7 +41,7 @@ const Home: NextPage<Props> = ({ popularDestination, cardData }) => {
       <main className="max-w-[1100px] m-auto px-4">
         <section className="py-6">
           <Typography component="h2" variant="h4" fontWeight="500" className="">
-            Explore Nearby
+            Workout Nearby
           </Typography>
           <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {popularDestination.map((item: any, index: any) => (
@@ -56,7 +56,7 @@ const Home: NextPage<Props> = ({ popularDestination, cardData }) => {
         </section>
         <section className=" py-6">
           <Typography component="h2" variant="h4" fontWeight="500" className="">
-            Train Anywhere
+            Sport Anywhere
           </Typography>
           <div className="flex space-x-4 pt-12 pb-6 overflow-x-scroll overflow-y-hidden scrollbar-hide pl-2 -ml-2">
             {cardData.map((item, index) => (
@@ -67,7 +67,7 @@ const Home: NextPage<Props> = ({ popularDestination, cardData }) => {
         <div className="py-12">
           <LargCard
             img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
-            title="The Greatest Outdoors"
+            title="The Greatest Gyms"
             subtitle="Wishlists curated by us."
             buttonText="Get Inspired"
           />

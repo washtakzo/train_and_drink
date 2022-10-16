@@ -5,14 +5,10 @@ import { getCenter } from "geolib";
 
 import { InfoCards } from "../utils/types";
 
-type Props = {
-  searchResults: InfoCards[];
-};
-
-const Map: React.FC<Props> = ({ searchResults }) => {
+const Map = ({ searchResults }) => {
   const [selectedMarker, setSelectedMarker] = React.useState({});
 
-  const coordonates = searchResults.map((item: any) => ({
+  const coordonates = searchResults.map((item) => ({
     latitude: item.lat,
     longitude: item.long,
   }));

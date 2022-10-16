@@ -31,7 +31,7 @@ const Search = ({ cardsInfo }) => {
     setPlaceholder(
       `${router.query.location} | ${startDateFormated} - ${endDateFormated}`
     );
-  }, [router.isReady]);
+  }, [router.isReady, router.query.startDate, router.query.endDate]);
 
   return (
     <>
@@ -46,6 +46,7 @@ const Search = ({ cardsInfo }) => {
             {cardsInfo &&
               cardsInfo.map((item) => (
                 <InfoCard
+                  key={item.long + item.img}
                   img={item.img}
                   description={item.description}
                   location={item.location}

@@ -66,7 +66,7 @@ const Home: NextPage<Props> = ({ popularDestination, cardData }) => {
         </section>
         <div className="py-12">
           <LargCard
-            img="https://www.theanimedaily.com/wp-content/uploads/2022/08/Blue-Lock-Anime-Release-Date2.webp"
+            img="https://4kwallpapers.com/images/wallpapers/workout-limitless-endurance-gym-colorful-smoke-3556x2000-929.jpg"
             title="The Greatest Gyms"
             subtitle="Wishlists curated by us."
             buttonText="Get Inspired"

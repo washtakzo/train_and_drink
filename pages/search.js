@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import Map from "../components/Map";
 
 const DATA_BASE_URL =
-  "https://airbnb-clone-d2585-default-rtdb.europe-west1.firebasedatabase.app/search_results.json";
+  "https://train-and-drink-default-rtdb.europe-west1.firebasedatabase.app/search_results.json";
 
 const Search = ({ cardsInfo }) => {
   const router = useRouter();
